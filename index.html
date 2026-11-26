@@ -46,6 +46,28 @@
     .contact{background:#fff8ef}.contact-box{border-radius:10px;background:#fff;box-shadow:0 25px 70px rgba(92,36,7,.12)}footer{background:#321408;color:#f9deca}
     @media(max-width:900px){.hero-word{font-size:19vw;top:48%}.hero-portrait{width:63vw;height:80%;left:58%}.hero-copy{width:34%;top:24%}.hero-side{width:26%;top:26%}.hero-stats{bottom:22px}.stat-card{min-width:76px;padding:10px}.stat-card strong{font-size:1.3rem}}
     @media(max-width:650px){.nav-inner{padding-bottom:12px}.hero{height:850px;min-height:850px}.hero-inner{display:block;padding-top:0}.hero-word{top:36%;font-size:31vw}.hero-portrait{width:112vw;height:65%;left:60%;bottom:2%;opacity:1}.hero-copy{top:135px;width:78%;left:0}.hero-copy h1{font-size:2.8rem}.hero-sub{max-width:230px}.hero-side{top:auto;right:0;bottom:146px;width:45%;text-align:right}.hero-side h2{font-size:1.8rem}.hero-side p{display:none}.hero-stats{bottom:18px}.stat-cluster{gap:6px}.stat-card{min-width:70px;padding:9px}.hero-note{font-size:.58rem;max-width:120px}.about,.listings,.testimonials,.contact{padding:82px 0}}
+      /* Frosted glass cards */
+    :root{--glass-bg:rgba(255,255,255,.16);--glass-bg-strong:rgba(255,255,255,.52);--glass-border:rgba(255,255,255,.42);--glass-shadow:0 12px 40px rgba(90,30,0,.18),inset 0 1px 0 rgba(255,255,255,.5);--glass-blur:blur(18px) saturate(1.5)}
+    .nav .btn-light{background:var(--glass-bg-strong);color:var(--orange-dark);border:1px solid var(--glass-border);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur)}
+    .hero-copy,.hero-side{background:linear-gradient(145deg,rgba(120,35,0,.34),rgba(160,55,0,.22));border:1px solid var(--glass-border);border-radius:22px;box-shadow:var(--glass-shadow);backdrop-filter:blur(28px) saturate(1.4);-webkit-backdrop-filter:blur(28px) saturate(1.4);padding:22px 22px 24px;width:min(30%,350px)}
+    .hero-side{width:min(25%,290px)}.hero-copy{left:0;top:25%}
+    .stat-card{background:var(--glass-bg);border:1px solid var(--glass-border);color:#fff;border-radius:16px;box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);min-width:104px;padding:14px 16px}
+    .hero-actions .btn-light{background:rgba(255,255,255,.88);color:var(--orange-deep)}.hero-side p,.hero-sub{color:#fff!important;text-shadow:0 1px 6px rgba(80,20,0,.35)}
+    .about,.listings,.contact{position:relative;overflow:hidden;isolation:isolate}
+    .listings{background:radial-gradient(circle at 12% 14%,rgba(255,150,60,.55),transparent 34%),radial-gradient(circle at 88% 30%,rgba(216,90,5,.38),transparent 38%),radial-gradient(circle at 40% 92%,rgba(255,196,120,.6),transparent 40%),#f9e3cd}
+    .about{background:radial-gradient(circle at 90% 20%,rgba(255,170,90,.38),transparent 36%),#fff8ef}
+    .contact{background:radial-gradient(circle at 8% 20%,rgba(255,150,60,.45),transparent 36%),radial-gradient(circle at 92% 85%,rgba(216,90,5,.3),transparent 40%),#fff1e2}
+    .card{background:var(--glass-bg-strong);border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);transition:transform .25s ease,box-shadow .25s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(90,30,0,.24),inset 0 1px 0 rgba(255,255,255,.6)}
+    .tag{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .facts span,.pill{background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .contact-box{background:rgba(255,255,255,.5);border:1px solid var(--glass-border);border-radius:26px;box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur)}
+    .detail{background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.65);border-radius:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .testimonials{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(circle at 15% 20%,rgba(255,190,100,.6),transparent 36%),radial-gradient(circle at 85% 80%,rgba(120,30,0,.45),transparent 40%),var(--orange)}
+    .testimonial-aside,.testimonials .btn-outline{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);border-radius:18px;backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur)}
+    @media(max-width:900px){.hero-copy{width:38%;padding:16px}.hero-side{width:30%;padding:16px}}
+    @media(max-width:650px){.hero-copy{width:88%;padding:16px;top:96px}.hero-copy h1{font-size:2.2rem;margin:8px 0}.hero-sub{font-size:.9rem;margin-bottom:14px;max-width:none}.hero-actions{flex-wrap:nowrap}.hero-actions .btn{padding:10px 12px;font-size:.74rem;white-space:nowrap;text-align:center}.hero-portrait{height:54%!important;width:100vw!important;left:62%!important}.hero-side{padding:14px;width:48%}.stat-card{min-width:70px;padding:10px}}
+    @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.card,.contact-box,.hero-copy,.hero-side,.stat-card{background:rgba(255,255,255,.85)}.hero-copy,.hero-side,.stat-card{background:rgba(160,60,0,.6)}}
   </style>
 </head>
 <body>
