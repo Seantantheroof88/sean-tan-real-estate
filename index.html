@@ -68,10 +68,20 @@
     @media(max-width:900px){.hero-copy{width:38%;padding:16px}.hero-side{width:30%;padding:16px}}
     @media(max-width:650px){.hero-copy{width:88%;padding:16px;top:96px}.hero-copy h1{font-size:2.2rem;margin:8px 0}.hero-sub{font-size:.9rem;margin-bottom:14px;max-width:none}.hero-actions{flex-wrap:nowrap}.hero-actions .btn{padding:10px 12px;font-size:.74rem;white-space:nowrap;text-align:center}.hero-portrait{height:54%!important;width:100vw!important;left:62%!important}.hero-side{padding:14px;width:48%}.stat-card{min-width:70px;padding:10px}}
     @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.card,.contact-box,.hero-copy,.hero-side,.stat-card{background:rgba(255,255,255,.85)}.hero-copy,.hero-side,.stat-card{background:rgba(160,60,0,.6)}}
+      /* Language toggle */
+    .lang-toggle{display:inline-flex;padding:3px;border-radius:999px;background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);margin-left:6px}
+    .lang-toggle button{border:0;background:transparent;color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.04em;padding:7px 12px;border-radius:999px;cursor:pointer;line-height:1;text-transform:none}
+    .lang-toggle button.on{background:rgba(255,255,255,.9);color:var(--orange-deep)}
+    .is-zh body,.is-zh h1,.is-zh h2,.is-zh h3,.is-zh .brand,.is-zh .card h3,.is-zh .about-lead,.is-zh .quote{font-family:"DM Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",sans-serif}
+    .is-zh h1,.is-zh h2,.is-zh h3,.is-zh .quote,.is-zh .about-lead,.is-zh .hero-word,.is-zh .card h3{letter-spacing:0;line-height:1.15}
+    .is-zh .hero-copy h1{line-height:1.05}.is-zh .hero-side h2{line-height:1.1}
+    .is-zh .hero-word{font-size:clamp(5rem,14.5vw,13.5rem);letter-spacing:.05em;line-height:1;font-weight:800}
+    @media(max-width:900px){.is-zh .hero-word{font-size:20vw}}
+    @media(max-width:650px){.is-zh .hero-word{font-size:27vw;top:34%}.lang-toggle{margin-left:0}.lang-toggle button{padding:7px 10px}.nav-links{gap:8px}}
   </style>
 </head>
 <body>
-  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Sean Tan</a><div class="nav-links"><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a><a class="btn btn-light nav-cta" href="https://wa.me/60197277827" target="_blank" rel="noopener">WhatsApp</a></div></div></nav>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Sean Tan</a><div class="nav-links"><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a><a class="btn btn-light nav-cta" href="https://wa.me/60197277827" target="_blank" rel="noopener">WhatsApp</a><div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div></div></div></nav>
   <header class="hero" id="top">
     <div class="wrap hero-inner">
       <div class="hero-word" aria-hidden="true">Property</div>
@@ -136,6 +146,72 @@
     viewMore.addEventListener('click',()=>{const hidden=[...document.querySelectorAll('.extra-listing:not(.show)')];if(hidden.length){hidden.forEach(card=>{card.classList.add('show','visible')});viewMore.textContent='View all 456 on EdgeProp'}else{window.open('https://www.edgeprop.my/agent/105156/sean-tan','_blank','noopener')}});
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+      /* EN / 中文 switch */
+    (function(){
+      const ZH={
+        'About':'关于我','Listings':'房源','Contact':'联系',
+        'REN 44969 · Johor Bahru':'REN 44969 · 新山',
+        'Property':'房地产',
+        'Clear property advice for homes, commercial spaces and investments across Johor Bahru.':'为新山的住宅、商业物业与投资，提供清晰明确的房地产建议。',
+        'WhatsApp Sean':'WhatsApp 联系 Sean','View listings':'查看房源',
+        'JB Real':'新山','Estate':'房地产',
+        'Residential and commercial property guidance shaped around your goals — with practical answers, careful detail and local experience.':'围绕您的目标，提供住宅与商业物业的专业指引——实用的解答、细致的把关与丰富的本地经验。',
+        'Years experience':'年经验',
+        'Residential · Commercial · Investment':'住宅 · 商业 · 投资','Mandarin · English · Malay':'华语 · 英语 · 马来语',
+        'A considered approach':'用心的服务方式','Property decisions, thoughtfully handled.':'每个房产决定，都用心处理。',
+        'I’m Sean Tan, a Johor Bahru real estate agent specialising in residential and commercial properties.':'我是 Sean Tan，新山的房地产经纪，专注于住宅与商业物业。',
+        'With 8 years of experience, I advise families and investors on property purchases, sales and investment opportunities with a considered, detail-focused approach.':'凭借 8 年的经验，我以周全、注重细节的方式，为家庭和投资者提供买房、卖房及投资方面的建议。',
+        'My priority is to understand each client’s objectives and provide clear, practical guidance throughout the property journey. Whether you are looking for a home, expanding your property portfolio or considering a commercial property in Johor Bahru, I aim to make every decision well-informed and thoughtfully handled.':'我的首要任务，是了解每位客户的目标，并在整个置业过程中提供清晰、实用的指引。无论您想找一个家、扩大房产投资组合，还是考虑在新山购置商业物业，我都希望让每个决定都有充分的依据、得到用心的处理。',
+        'Mandarin':'华语','English':'英语','Malay':'马来语',
+        'Start a private discussion':'开始私下洽谈',
+        'Current opportunities':'当前房源机会','Featured listings':'精选房源',
+        'A selection from Sean’s EdgeProp profile. Tap any property to view the latest details and availability.':'以下精选自 Sean 的 EdgeProp 主页，点击任一房源即可查看最新详情与是否仍可租售。',
+        'For rent':'出租','For sale':'出售','Commercial · Rent':'商业 · 出租',
+        'View more':'查看更多','View all 456 on EdgeProp':'在 EdgeProp 查看全部 456 个房源',
+        'Latest listing information and photos are sourced from EdgeProp and may change. EdgeProp currently reports 456 total listings; use the button below to see the additional listings available on Sean\'s profile.':'最新房源资料和照片取自 EdgeProp，可能随时变动。EdgeProp 目前显示共 456 个房源；请使用按钮查看 Sean 主页上的更多房源。',
+        'Good property advice starts with listening carefully.':'好的房产建议，始于用心倾听。',
+        'Client references':'客户推荐','Private, personal and relevant.':'私密、个人化、贴合您的需要。',
+        'Client references and introductions are available upon request, so you can hear from people whose property journey is relevant to yours.':'如有需要，我们可以提供客户推荐与介绍，让您听听与您置业情况相似的人的真实经历。',
+        'Request a reference':'索取客户推荐',
+        'Let’s talk property':'聊聊房产吧','A clear next step starts with a conversation.':'清晰的下一步，从一次交谈开始。',
+        'Tell me what you’re looking for, where you are in the process and what matters most to you. I’ll respond with practical guidance.':'告诉我您在找什么、目前处于哪个阶段，以及最看重什么。我会给您实用的建议。',
+        'Registration':'注册编号','Area':'地区','Johor Bahru, Malaysia':'马来西亚新山',
+        'Johor Bahru Real Estate Agent · REN 44969':'新山房地产经纪 · REN 44969'
+      };
+      const TITLE={en:document.title,zh:'Sean Tan | 新山房地产经纪'};
+      const orig=new WeakMap();
+      function tr(node,zh){
+        const raw=node.nodeValue,t=raw.trim();if(!t)return;
+        const p=node.parentElement;
+        let out=null;
+        if(zh){
+          if(t==='Languages')out=p&&p.closest('.stat-card')?'种语言':'语言';
+          else if(ZH[t])out=ZH[t];
+          else{let m;
+            if((m=t.match(/^(\d+) Beds?$/)))out=m[1]+' 卧室';
+            else if((m=t.match(/^(\d+) Baths?$/)))out=m[1]+' 浴室';
+            else if((m=t.match(/^(\d+) Rooms?$/)))out=m[1]+' 房';
+            else if((m=t.match(/^([\d,]+) sqft$/)))out=m[1]+' 平方英尺';}
+        }
+        if(zh&&out!==null){if(!orig.has(node))orig.set(node,raw);node.nodeValue=raw.replace(t,out)}
+        else if(!zh&&orig.has(node)){node.nodeValue=orig.get(node);orig.delete(node)}
+      }
+      function apply(lang){
+        const zh=lang==='zh';
+        document.documentElement.lang=zh?'zh-CN':'en';
+        document.documentElement.classList.toggle('is-zh',zh);
+        document.title=zh?TITLE.zh:TITLE.en;
+        const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>/^(SCRIPT|STYLE)$/.test(n.parentElement.tagName)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+        const nodes=[];while(w.nextNode())nodes.push(w.currentNode);
+        nodes.forEach(n=>tr(n,zh));
+        document.querySelectorAll('.lang-toggle button').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
+      }
+      let lang='en';
+      try{const q=new URLSearchParams(location.search).get('lang');lang=(q==='zh'||q==='en')?q:(localStorage.getItem('lang')||'en')}catch(e){}
+      document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;try{localStorage.setItem('lang',lang)}catch(e){}apply(lang)}));
+      document.getElementById('viewMore').addEventListener('click',()=>apply(lang));
+      apply(lang);
+    })();
   </script>
 </body>
 </html>
