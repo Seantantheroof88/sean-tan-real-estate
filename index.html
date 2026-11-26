@@ -78,10 +78,46 @@
     .is-zh .hero-word{font-size:clamp(5rem,14.5vw,13.5rem);letter-spacing:.05em;line-height:1;font-weight:800}
     @media(max-width:900px){.is-zh .hero-word{font-size:20vw}}
     @media(max-width:650px){.is-zh .hero-word{font-size:27vw;top:34%}.lang-toggle{margin-left:0}.lang-toggle button{padding:7px 10px}.nav-links{gap:8px}}
+      /* Loan calculator */
+    .calc{padding:110px 0;background:radial-gradient(circle at 10% 10%,rgba(255,150,60,.42),transparent 36%),radial-gradient(circle at 92% 88%,rgba(216,90,5,.3),transparent 40%),#fff3e6;position:relative;overflow:hidden;isolation:isolate}
+    .calc .section-head{margin-bottom:34px}
+    .calc-tabs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px}
+    .calc-tab{text-align:left;cursor:pointer;padding:20px 26px;border-radius:999px;border:1px solid var(--glass-border);background:rgba(255,255,255,.5);color:var(--orange-dark);box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);transition:background .2s,color .2s,transform .2s}
+    .calc-tab strong{display:block;font-family:"Manrope",sans-serif;font-size:1.05rem}.calc-tab small{display:block;font-size:.78rem;opacity:.75;margin-top:2px}
+    .calc-tab:hover{transform:translateY(-2px)}
+    .calc-tab.on{background:linear-gradient(135deg,#f57c13,#c84a00);color:#fff;border-color:rgba(255,255,255,.5)}
+    .calc-panel{display:none;grid-template-columns:1.05fr 1fr;border-radius:26px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:var(--glass-shadow);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);background:rgba(255,255,255,.5)}
+    .calc-panel.on{display:grid}
+    .calc-form{padding:36px 38px 40px}
+    .calc-form h3{font-family:"Manrope",sans-serif;font-size:1.7rem;letter-spacing:-.03em;margin:6px 0 8px;color:var(--ink)}
+    .calc-sub{color:var(--muted);margin:0 0 24px;font-size:.92rem}
+    .field{display:block;margin-bottom:18px}.field .lbl{display:block;font-weight:700;font-size:.82rem;color:var(--orange-dark);margin-bottom:8px}
+    .field small{display:block;margin-top:7px;font-size:.74rem;color:var(--muted);line-height:1.45}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .inp{position:relative;display:flex;align-items:center;background:rgba(255,255,255,.72);border:1px solid rgba(216,90,5,.22);border-radius:14px;padding:0 16px;transition:border-color .2s,box-shadow .2s}
+    .inp:focus-within{border-color:var(--orange);box-shadow:0 0 0 4px rgba(216,90,5,.14)}
+    .inp i{font-style:normal;color:var(--muted);font-size:.85rem;margin-right:10px}.inp i.end{margin:0 0 0 10px}
+    .inp input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:1.05rem;color:var(--ink);padding:16px 0;outline:0;-moz-appearance:textfield}
+    .inp input::-webkit-outer-spin-button,.inp input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+    .calc-out{background:linear-gradient(160deg,rgba(60,20,6,.94),rgba(28,10,3,.96));color:#fff;padding:36px 38px 40px;display:flex;flex-direction:column}
+    .out-label{font-size:.76rem;letter-spacing:.06em;color:#ffb877}
+    .out-big{font-family:"Manrope",sans-serif;font-weight:800;font-size:clamp(2.2rem,4.4vw,3.6rem);letter-spacing:-.04em;line-height:1.1;margin:10px 0 22px;word-break:break-word}
+    .out-rows{border-top:1px solid rgba(255,255,255,.14)}
+    .out-rows div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.9rem}
+    .out-rows span{color:rgba(255,255,255,.78)}.out-rows b{font-weight:700;white-space:nowrap}
+    .out-note{font-size:.74rem;line-height:1.55;color:rgba(255,255,255,.6);margin:16px 0 20px}
+    .out-warn{font-size:.82rem;line-height:1.5;color:#ffd2a8;background:rgba(255,140,40,.16);border:1px solid rgba(255,170,90,.4);border-radius:12px;padding:10px 14px;margin:14px 0 0}
+    .out-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto}
+    .out-actions .btn{padding:14px 20px;font-size:.84rem;text-align:center;cursor:pointer;font-weight:700}
+    .btn-gold{background:linear-gradient(135deg,#ffb35a,#e8680a);color:#2a1004;border:0}
+    .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+    .is-zh .calc-form h3,.is-zh .out-big,.is-zh .calc-tab strong{letter-spacing:0}
+    @media(max-width:850px){.calc{padding:80px 0}.calc-tabs{grid-template-columns:1fr}.calc-tab{border-radius:26px;padding:16px 22px}.calc-panel.on{grid-template-columns:1fr}.calc-form,.calc-out{padding:28px 24px 30px}}
+    @media(max-width:480px){.field-row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Sean Tan</a><div class="nav-links"><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a><a class="btn btn-light nav-cta" href="https://wa.me/60197277827" target="_blank" rel="noopener">WhatsApp</a><div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div></div></div></nav>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Sean Tan</a><div class="nav-links"><a href="#about">About</a><a href="#listings">Listings</a><a href="#calculator">Calculator</a><a href="#contact">Contact</a><a class="btn btn-light nav-cta" href="https://wa.me/60197277827" target="_blank" rel="noopener">WhatsApp</a><div class="lang-toggle" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="zh">中文</button></div></div></div></nav>
   <header class="hero" id="top">
     <div class="wrap hero-inner">
       <div class="hero-word" aria-hidden="true">Property</div>
@@ -123,6 +159,67 @@
       <a class="card reveal extra-listing" href="https://www.edgeprop.my/agent/105156/sean-tan" target="_blank" rel="noopener"><div class="photo"><span class="tag">For rent</span></div><div class="card-body"><div class="price">RM 3,200</div><h3>Country Garden @ Danga Bay</h3><div class="location">Johor Bahru, Johor</div><div class="facts"><span>3 Beds</span><span>3 Baths</span><span>1,232 sqft</span></div></div></a>
     </div><div class="view-more-row"><button class="btn btn-dark" id="viewMore" type="button">View more</button></div><p class="source-note">Latest listing information and photos are sourced from EdgeProp and may change. EdgeProp currently reports 456 total listings; use the button below to see the additional listings available on Sean's profile.</p></div></section>
 
+    <section class="calc" id="calculator"><div class="wrap">
+      <div class="section-head reveal"><div><div class="eyebrow">Loan calculator</div><h2>Do the maths, buy with confidence.</h2></div><p>Pick a calculator below. Results are for reference only; bank approval prevails.</p></div>
+      <div class="calc-tabs reveal" role="tablist">
+        <button type="button" class="calc-tab on" data-tab="pay" role="tab" aria-selected="true"><strong>Monthly instalment</strong><small>Enter the price, get the monthly payment</small></button>
+        <button type="button" class="calc-tab" data-tab="afford" role="tab" aria-selected="false"><strong>What can I afford?</strong><small>Enter your income, get the maximum price</small></button>
+      </div>
+
+      <div class="calc-panel on reveal" id="panel-pay">
+        <div class="calc-form">
+          <div class="eyebrow">Instalment calculator</div>
+          <h3>Monthly instalment calculator</h3>
+          <p class="calc-sub">Enter the property price and loan terms to see your monthly payment.</p>
+          <label class="field"><span class="lbl">Property price</span><div class="inp"><i>RM</i><input id="p-price" type="number" inputmode="decimal" min="0" step="any" value="500000"></div></label>
+          <div class="field-row">
+            <label class="field"><span class="lbl">Down payment</span><div class="inp"><input id="p-down" type="number" inputmode="decimal" min="0" max="100" step="any" value="10"><i class="end">%</i></div></label>
+            <label class="field"><span class="lbl">Interest rate (p.a.)</span><div class="inp"><input id="p-rate" type="number" inputmode="decimal" min="0" step="any" value="4.00"><i class="end">%</i></div></label>
+          </div>
+          <label class="field"><span class="lbl">Loan tenure (max 35)</span><div class="inp"><input id="p-years" type="number" inputmode="numeric" min="1" max="35" step="1" value="35"><i class="end">yrs</i></div></label>
+        </div>
+        <div class="calc-out">
+          <div class="out-label">Estimated monthly instalment</div>
+          <div class="out-big" id="o-pay">RM 0</div>
+          <div class="out-rows">
+            <div><span>Loan amount</span><b id="o-loan">RM 0</b></div>
+            <div><span>Down payment</span><b id="o-down">RM 0</b></div>
+            <div><span>Total interest</span><b id="o-int">RM 0</b></div>
+            <div><span>Total repayment</span><b id="o-total">RM 0</b></div>
+          </div>
+          <p class="out-note">This is an estimate. It excludes legal fees, stamp duty and other costs. Contact me and I will help you assess it bank by bank.</p>
+          <div class="out-actions"><button type="button" class="btn btn-gold" id="go-afford">Check what I can afford</button><a class="btn btn-ghost" id="wa-pay" href="https://wa.me/60177277827" target="_blank" rel="noopener">Help me check my eligibility</a></div>
+        </div>
+      </div>
+
+      <div class="calc-panel reveal" id="panel-afford">
+        <div class="calc-form">
+          <div class="eyebrow">Affordability calculator</div>
+          <h3>What is the most I can afford?</h3>
+          <p class="calc-sub">Enter your income and monthly commitments. Estimated with 90% financing.</p>
+          <label class="field"><span class="lbl">Net monthly income</span><div class="inp"><i>RM</i><input id="a-income" type="number" inputmode="decimal" min="0" step="any" value="8000"></div><small>After EPF, SOCSO and tax. For joint applications, add both incomes.</small></label>
+          <label class="field"><span class="lbl">Existing monthly commitments</span><div class="inp"><i>RM</i><input id="a-debt" type="number" inputmode="decimal" min="0" step="any" value="1200"></div><small>Car loans, other home loans, personal loans, PTPTN, credit cards (about 5% of the balance owed).</small></label>
+          <div class="field-row">
+            <label class="field"><span class="lbl">Interest rate (p.a.)</span><div class="inp"><input id="a-rate" type="number" inputmode="decimal" min="0" step="any" value="4.00"><i class="end">%</i></div></label>
+            <label class="field"><span class="lbl">Loan tenure (max 35)</span><div class="inp"><input id="a-years" type="number" inputmode="numeric" min="1" max="35" step="1" value="35"><i class="end">yrs</i></div></label>
+          </div>
+        </div>
+        <div class="calc-out">
+          <div class="out-label">Maximum property price (90% financing)</div>
+          <div class="out-big" id="o-price">RM 0</div>
+          <div class="out-rows">
+            <div><span>Maximum loan</span><b id="o-maxloan">RM 0</b></div>
+            <div><span>Max affordable monthly</span><b id="o-maxpay">RM 0</b></div>
+            <div><span>Down payment needed (10%)</span><b id="o-maxdown">RM 0</b></div>
+            <div><span>DSR (new + existing commitments)</span><b id="o-dsr">0%</b></div>
+          </div>
+          <p class="out-warn" id="o-warn" hidden>Your existing commitments are already above the limit, so no new loan is estimated.</p>
+          <p class="out-note">This is an estimate assuming a 70% DSR limit. Banks calculate differently and will check your CCRIS and CTOS records. Contact me and I will help you assess it bank by bank.</p>
+          <div class="out-actions"><button type="button" class="btn btn-gold" id="go-pay">Calculate instalment for this price</button><a class="btn btn-ghost" id="wa-afford" href="https://wa.me/60177277827" target="_blank" rel="noopener">Help me check my eligibility</a></div>
+        </div>
+      </div>
+    </div></section>
+
     <section class="testimonials" id="testimonials"><div class="wrap testimonial-grid reveal"><div><div class="quote-mark">“</div><p class="quote">Good property advice starts with listening carefully.</p></div><div class="testimonial-aside"><div class="eyebrow">Client references</div><h3>Private, personal and relevant.</h3><p>Client references and introductions are available upon request, so you can hear from people whose property journey is relevant to yours.</p><a class="btn btn-outline" href="https://wa.me/60177277827?text=Hi%20Sean%2C%20I%27d%20like%20to%20request%20a%20client%20reference." target="_blank" rel="noopener">Request a reference</a></div></div></section>
 
     <section class="contact" id="contact"><div class="wrap"><div class="contact-box reveal"><div><div class="eyebrow">Let’s talk property</div><h2>A clear next step starts with a conversation.</h2><p>Tell me what you’re looking for, where you are in the process and what matters most to you. I’ll respond with practical guidance.</p><a class="btn btn-dark" href="https://wa.me/60177277827" target="_blank" rel="noopener">WhatsApp Sean</a></div><div class="contact-details"><div class="detail"><small>WhatsApp</small><strong>+60 17-727 7827</strong></div><div class="detail"><small>Registration</small><strong>REN 44969</strong></div><div class="detail"><small>Languages</small><strong>Mandarin · English · Malay</strong></div><div class="detail"><small>Area</small><strong>Johor Bahru, Malaysia</strong></div></div></div></div></section>
@@ -146,9 +243,73 @@
     viewMore.addEventListener('click',()=>{const hidden=[...document.querySelectorAll('.extra-listing:not(.show)')];if(hidden.length){hidden.forEach(card=>{card.classList.add('show','visible')});viewMore.textContent='View all 456 on EdgeProp'}else{window.open('https://www.edgeprop.my/agent/105156/sean-tan','_blank','noopener')}});
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-      /* EN / 中文 switch */
+      /* Loan calculators */
+    (function(){
+      const $=id=>document.getElementById(id);
+      const num=(id,lo,hi)=>{let v=parseFloat($(id).value);if(!isFinite(v))v=0;if(lo!=null&&v<lo)v=lo;if(hi!=null&&v>hi)v=hi;return v};
+      const rm=n=>'RM '+Math.round(n).toLocaleString('en-MY');
+      const isZh=()=>document.documentElement.lang.indexOf('zh')===0;
+      const pmt=(loan,rate,years)=>{const n=Math.max(1,Math.round(years*12)),r=rate/100/12;return r===0?loan/n:loan*r/(1-Math.pow(1+r,-n))};
+      const pv=(payment,rate,years)=>{const n=Math.max(1,Math.round(years*12)),r=rate/100/12;return r===0?payment*n:payment*(1-Math.pow(1+r,-n))/r};
+      let maxPrice=0;
+      function calcPay(){
+        const price=num('p-price',0),down=num('p-down',0,100),rate=num('p-rate',0),years=num('p-years',1,35);
+        const loan=price*(1-down/100),m=pmt(loan,rate,years),n=Math.round(years*12);
+        $('o-pay').textContent=rm(m);$('o-loan').textContent=rm(loan);$('o-down').textContent=rm(price*down/100);
+        $('o-int').textContent=rm(m*n-loan);$('o-total').textContent=rm(m*n);
+        const msg=isZh()
+          ?'你好 Sean，我想请你帮我评估房贷资格。房价 '+rm(price)+'，首付 '+down+'%，利率 '+rate+'%，年限 '+years+' 年（估算每月供款 '+rm(m)+'）。'
+          :'Hi Sean, I would like help checking my home loan eligibility. Property price '+rm(price)+', down payment '+down+'%, rate '+rate+'%, '+years+' years (estimated instalment '+rm(m)+' a month).';
+        $('wa-pay').href='https://wa.me/60177277827?text='+encodeURIComponent(msg);
+      }
+      function calcAfford(){
+        const income=num('a-income',0),debt=num('a-debt',0),rate=num('a-rate',0),years=num('a-years',1,35);
+        const maxPay=Math.max(0,income*0.7-debt),loan=pv(maxPay,rate,years);
+        maxPrice=Math.floor(loan/0.9/1000)*1000;
+        const dsr=income>0?(maxPay+debt)/income*100:0;
+        $('o-price').textContent=rm(maxPrice);$('o-maxloan').textContent=rm(loan);$('o-maxpay').textContent=rm(maxPay);
+        $('o-maxdown').textContent=rm(maxPrice*0.1);$('o-dsr').textContent=dsr.toFixed(1)+'%';
+        $('o-warn').hidden=!(income>0&&income*0.7-debt<=0);
+        const msg=isZh()
+          ?'你好 Sean，我想请你帮我评估房贷资格。月净收入 '+rm(income)+'，每月已有供款 '+rm(debt)+'，利率 '+rate+'%，年限 '+years+' 年（估算最高可买 '+rm(maxPrice)+'）。'
+          :'Hi Sean, I would like help checking my home loan eligibility. Net monthly income '+rm(income)+', existing commitments '+rm(debt)+', rate '+rate+'%, '+years+' years (estimated maximum price '+rm(maxPrice)+').';
+        $('wa-afford').href='https://wa.me/60177277827?text='+encodeURIComponent(msg);
+      }
+      function show(tab){
+        document.querySelectorAll('.calc-tab').forEach(b=>{const on=b.dataset.tab===tab;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+        $('panel-pay').classList.toggle('on',tab==='pay');$('panel-afford').classList.toggle('on',tab==='afford');
+      }
+      document.querySelectorAll('.calc-tab').forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+      ['p-price','p-down','p-rate','p-years'].forEach(i=>$(i).addEventListener('input',calcPay));
+      ['a-income','a-debt','a-rate','a-years'].forEach(i=>$(i).addEventListener('input',calcAfford));
+      $('go-afford').addEventListener('click',()=>show('afford'));
+      $('go-pay').addEventListener('click',()=>{if(maxPrice>0)$('p-price').value=maxPrice;$('p-rate').value=$('a-rate').value;$('p-years').value=$('a-years').value;calcPay();show('pay')});
+      document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{calcPay();calcAfford()},0)));
+      calcPay();calcAfford();
+      if(new URLSearchParams(location.search).get('calc')==='afford')show('afford');
+    })();
+    /* EN / 中文 switch */
     (function(){
       const ZH={
+        'Calculator':'贷款计算器','Loan calculator':'贷款计算器','Do the maths, buy with confidence.':'算一算，买得更安心',
+        'Pick a calculator below. Results are for reference only; bank approval prevails.':'选择下面的计算器。结果仅供参考，以银行批准为准。',
+        'Monthly instalment':'每月供期计算','Enter the price, get the monthly payment':'输入房价，算出每月供款',
+        'What can I afford?':'我可以买什么价位的产业','Enter your income, get the maximum price':'输入薪水，算出最高可买价',
+        'Instalment calculator':'供期计算器','Monthly instalment calculator':'每月供期计算器',
+        'Enter the property price and loan terms to see your monthly payment.':'输入房价和贷款条件，查看每月供款。',
+        'Property price':'房价','Down payment':'首付比例','Interest rate (p.a.)':'年利率','Loan tenure (max 35)':'贷款年限（最长 35 年）','yrs':'年',
+        'Estimated monthly instalment':'预估每月供款','Loan amount':'贷款额','Total interest':'总利息','Total repayment':'还款总额',
+        'This is an estimate. It excludes legal fees, stamp duty and other costs. Contact me and I will help you assess it bank by bank.':'此为估算，不包含律师费、印花税及其他费用。欢迎联系我，逐家银行帮你评估。',
+        'Check what I can afford':'看看我能买多少钱的产业','Help me check my eligibility':'帮我评估贷款资格',
+        'Affordability calculator':'贷款批准率计算器','What is the most I can afford?':'我最高可以买多少钱的产业？',
+        'Enter your income and monthly commitments. Estimated with 90% financing.':'输入你的薪水和每月已有的供款，以 90% 贷款成数估算你最高可买多少钱的产业。',
+        'Net monthly income':'每月净收入','After EPF, SOCSO and tax. For joint applications, add both incomes.':'扣除 EPF、SOCSO 和税后。联名申请可把两人收入相加。',
+        'Existing monthly commitments':'每月已有供款','Car loans, other home loans, personal loans, PTPTN, credit cards (about 5% of the balance owed).':'车贷、其他房贷、个人贷款、PTPTN、信用卡（约欠款的 5%）。',
+        'Maximum property price (90% financing)':'最高可买产业价（90% 贷款）','Maximum loan':'最高贷款额','Max affordable monthly':'每月最多可供',
+        'Down payment needed (10%)':'需准备首付（10%）','DSR (new + existing commitments)':'DSR（新供款 + 原有供款）',
+        'Your existing commitments are already above the limit, so no new loan is estimated.':'你现有的供款已超过上限，因此无法估算新的贷款。',
+        'This is an estimate assuming a 70% DSR limit. Banks calculate differently and will check your CCRIS and CTOS records. Contact me and I will help you assess it bank by bank.':'此为估算，假设 DSR 上限为 70%。各银行计算方式不同，也会查看 CCRIS 与 CTOS 记录。欢迎联系我，逐家银行帮你评估。',
+        'Calculate instalment for this price':'用这个价钱算供款',
         'About':'关于我','Listings':'房源','Contact':'联系',
         'REN 44969 · Johor Bahru':'REN 44969 · 新山',
         'Property':'房地产',
@@ -186,6 +347,7 @@
         let out=null;
         if(zh){
           if(t==='Languages')out=p&&p.closest('.stat-card')?'种语言':'语言';
+          else if(t==='Down payment'&&p&&p.closest('.out-rows'))out='首付金额';
           else if(ZH[t])out=ZH[t];
           else{let m;
             if((m=t.match(/^(\d+) Beds?$/)))out=m[1]+' 卧室';
